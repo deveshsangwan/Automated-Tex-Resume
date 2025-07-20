@@ -1,14 +1,15 @@
 % !TEX program = xelatex
-\documentclass{fonts}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
+\documentclass[letterpaper,11pt]{article}
 
-% Additional packages for the new resume
+%-----------------------------------------------------------
+% PACKAGES AND FORMATTING
+%-----------------------------------------------------------
+
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
@@ -19,6 +20,14 @@
 \usepackage{graphicx}
 \setlength{\multicolsep}{-3.0pt}
 \setlength{\columnsep}{-1pt}
+\usepackage{fontspec}
+\setmainfont{Lato}[
+  UprightFont = *-Light,
+  BoldFont = *-Regular
+]
+
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
 
 % Color definitions
 \definecolor{cvblue}{HTML}{0E5484}
@@ -75,6 +84,9 @@
 \renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
+%================================================================================
+% START OF RESUME DOCUMENT
+%================================================================================
 \begin{document}
 
 %---------- HEADING ----------
@@ -88,10 +100,12 @@
     \href{https://github.com/deveshsangwan}{\raisebox{-0.2\height}\faGithub~GitHub}
 \end{center}
 
+
 %---------- PROFESSIONAL SUMMARY ----------
 \section{PROFESSIONAL SUMMARY}
 \vspace{-2pt}
 \small{Award-winning Software Engineer with 3+ years of experience specializing in high-performance backend systems. Drove a \textbf{75\% reduction in core processing latency} at Paisabazaar by re-architecting critical workflows. Proven expert in \textbf{Node.js, distributed systems, and scalable backend architecture}.}
+
 
 %---------- EXPERIENCE ----------
 \section{EXPERIENCE}
