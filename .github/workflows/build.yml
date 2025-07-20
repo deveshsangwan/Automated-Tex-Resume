@@ -58,7 +58,7 @@ jobs:
           name: resume-pdf
 
       - name: Rename PDF
-        run: mv resume.pdf "Pushpinder's Resume.pdf"
+        run: mv resume.pdf "Devesh's Resume.pdf"
 
       - name: Create Release with Asset
         uses: softprops/action-gh-release@v1
@@ -67,7 +67,7 @@ jobs:
         with:
           tag_name: v${{ steps.date.outputs.date }}-${{ steps.extract_branch.outputs.branch }}
           name: Release - ${{ steps.extract_branch.outputs.branch }} - ${{ steps.date.outputs.date }}
-          files: "Pushpinder's Resume.pdf"
+          files: "Devesh's Resume.pdf"
           draft: false
           prerelease: false
           generate_release_notes: true
@@ -92,7 +92,7 @@ jobs:
         with:
           tag_name: v${{ steps.date.outputs.date }}
           files: resume.pdf
-          name: Pushpinder_Resume.pdf
+          name: Devesh_Resume.pdf
 
   deploy_to_github_pages:
     needs: compile_latex
@@ -109,11 +109,11 @@ jobs:
       - name: Create deployment directory
         run: |
           mkdir -p out
-          mv resume.pdf out/Pushpinder_Resume.pdf
+          mv resume.pdf out/Devesh_Resume.pdf
 
       - name: Create index.html
         run: |
-          echo '<html><body><a href="Pushpinder_Resume.pdf">View Resume</a></body></html>' > out/index.html
+          echo '<html><body><a href="Devesh_Resume.pdf">View Resume</a></body></html>' > out/index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

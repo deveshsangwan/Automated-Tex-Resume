@@ -1,6 +1,6 @@
-# Resume Automation
+# Devesh Sangwan's Resume
 
-This repository contains an automated system for managing and deploying a professional resume using GitHub Actions. The setup ensures that any updates to the resume are processed, compiled, and deployed seamlessly.
+This repository contains an automated system for managing and deploying Devesh Sangwan's professional resume using GitHub Actions. The setup ensures that any updates to the resume are processed, compiled, and deployed seamlessly.
 
 ## Features
 - **Automated Deployment**: Uses GitHub Actions to compile and deploy the latest version of the resume.
@@ -47,7 +47,7 @@ After making updates to `resume.tex`, simply commit and push. The workflow will 
 The pipeline will deploy your resume on a **GitHub Page automatically**, and the URL will remain constant. This means you will always have a reliable, up-to-date resume accessible at the same link.
 
 ## Reference
-For more details on setting up GitHub Actions for resume deployment, check out my blog post: [Using GitHub Actions for Automated Resume Deployment](https://swiftlysingh.com/using-github-actions-for-automated-resume-deployment)
+For more details on setting up GitHub Actions for resume deployment, check out the original blog post: [Using GitHub Actions for Automated Resume Deployment](https://swiftlysingh.com/using-github-actions-for-automated-resume-deployment)
 
 ## License
 This project is licensed under the Apache License 2.0. See `LICENSE` for more details.
