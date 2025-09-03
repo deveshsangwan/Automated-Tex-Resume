@@ -119,7 +119,9 @@
         \resumeItem{Led zero-downtime migration of 4 critical microservices to \textbf{Node.js v18}, boosting runtime efficiency by \textbf{20\%} while mentoring 3 junior engineers on modern development practices.}
         \resumeItem{Championed Test-Driven Development (TDD) adoption, raising team code coverage from 0\% to over \textbf{80\%} and conducting training sessions for junior developers.}
         \resumeItem{Implemented a \textbf{Redis caching} strategy for application data and token management, reducing SQL database load by \textbf{45\%} and cutting overall API response times by \textbf{30\%}.}
-        \resumeItem{Developed a resilient CRON job system for automated loan disbursements, achieving \textbf{100\% same-day processing} by gracefully handling third-party API failures.}
+        \resumeItem{Developed a resilient CRON job system for automated loan disbursements, achieving \textbf{100\% same-day processing}.}
+        \resumeItem{Designed an \textbf{event-driven Journey-State platform} (TypeScript, Node EventEmitter, \textbf{Kysely/MySQL}, \textbf{Redis}); shipped \textbf{customer journey summary} API + cache and \textbf{Commbox} drop-off SMS; defined typed events and pluggable handlers enabling push notifications, CRM sync, lead disposal, and data-warehouse ingestion.}
+        \resumeItem{Built a partner/product-aware \textbf{status-resolution engine} (exact/stage/state fallbacks) with non-blocking emissions and a \textbf{24h cache TTL}; unified handler registration for main/sub/terminal/rejected transitions.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -127,13 +129,13 @@
 \section{PROJECTS}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {\href{https://cricscore.deveshsangwan.com/}{CricScore: Full-Stack Live Score Platform \raisebox{-0.1\height}{\faLink}}}{Next.js, Node.js, TypeScript, Docker}{}{}
+      {\href{https://cricscore.deveshsangwan.com/}{Cricket Score Monorepo: Real-time Scores (Next.js + tRPC) \raisebox{-0.1\height}{\faLink}}}{Next.js, tRPC, Prisma, MongoDB, pnpm, Docker}{}{}
       \vspace{-10pt}
     \resumeItemListStart
-        \resumeItem{Architected and deployed a full-stack web application from scratch, featuring a responsive \textbf{Next.js 15} frontend and a robust \textbf{Node.js} backend to provide real-time cricket scores and statistics.}
-        \resumeItem{Engineered the backend API with Express.js to scrape live match data using \textbf{Cheerio}, manage data in \textbf{MongoDB} via the \textbf{Prisma} ORM, and secure endpoints with \textbf{Clerk} authentication.}
-        \resumeItem{Authored a comprehensive test suite for the backend using \textbf{Mocha \& Chai}, achieving over \textbf{95\% code coverage} and ensuring high reliability for the API service.}
-        \resumeItem{Established a complete \textbf{CI/CD pipeline} using \textbf{GitHub Actions} for automated testing and builds, deploying the frontend to \textbf{Vercel} and the \textbf{Docker}-containerized backend to \textbf{Render}.}
+        \resumeItem{Built a \textbf{pnpm monorepo} with a \textbf{Next.js} frontend and a TypeScript backend exposing a \textbf{tRPC} API over Express; shared types for end-to-end type safety.}
+        \resumeItem{Delivered real-time match stats via \textbf{SSE} subscriptions (tRPC \texttt{subscribeMatchStatsById}); scraped live data with \textbf{Cheerio} and persisted via \textbf{Prisma} + \textbf{MongoDB}.}
+        \resumeItem{Secured the stack with \textbf{Clerk} authentication; containerized with \textbf{Docker}; CI with \textbf{GitHub Actions}; coverage tracked via \textbf{Codecov} (\textbf{90.1\% functions}, \textbf{93.82\% lines}).}
+        \resumeItem{Open-sourced (\href{https://github.com/deveshsangwan/cricketScoreApi}{GitHub}); deployed frontend to \textbf{Vercel} and backend to \textbf{Render}.}
     \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -141,10 +143,10 @@
 \section{TECHNICAL SKILLS}
     \small{
     \textbf{Languages:} TypeScript, JavaScript, C, C++, Java \newline
-    \textbf{Frameworks \& Libraries:} Node.js, Express.js, React.js, Next.js, Prisma, Cheerio, Tailwind CSS \newline
+    \textbf{Frameworks \& Libraries:} Node.js, Express.js, React.js, Next.js, tRPC, Prisma, Cheerio, Tailwind CSS, Clerk, Framer Motion \newline
     \textbf{Databases \& Caching:} MySQL, Cassandra, Redis, MongoDB \newline
-    \textbf{DevOps \& Testing:} Docker, GitHub Actions, Vercel, Mocha, Jest, Chai \newline
-    \textbf{Architectures \& Methodologies:} Microservices, REST APIs, Agile, Test-Driven Development (TDD), Design Patterns
+    \textbf{DevOps \& Testing:} Docker, GitHub Actions, Vercel, Render, pnpm, Codecov, Mocha, Jest, Chai \newline
+    \textbf{Architectures \& Methodologies:} Microservices, REST, tRPC, SSE, Monorepos, Agile, Test-Driven Development (TDD), Event-Driven Architecture, Design Patterns
     }
 
 %---------- ACHIEVEMENTS ----------

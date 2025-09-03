@@ -8,13 +8,28 @@ on:
   workflow_dispatch:
 
 jobs:
-  compile_latex:
+  compile_and_deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Cache LaTeX build
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.latexmk
+            ./resume.aux
+            ./resume.fdb_latexmk
+            ./resume.fls
+            ./resume.log
+            ./resume.out
+            ./resume.toc
+          key: latex-${{ runner.os }}-${{ hashFiles('resume.tex') }}
+          restore-keys: |
+            latex-${{ runner.os }}-
 
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
@@ -31,93 +46,54 @@ jobs:
             exit 1
           fi
 
+      - name: Get current date and branch
+        id: metadata
+        run: |
+          echo "date=$(date +'%Y-%m-%d-%H%M')" >> $GITHUB_OUTPUT
+          echo "branch=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
+
+      - name: Create release and deploy (if master branch)
+        if: github.ref == 'refs/heads/master'
+        run: |
+          # Rename PDF for release
+          cp resume.pdf "Devesh's Resume.pdf"
+          
+          # Create release with asset
+          gh release create "v${{ steps.metadata.outputs.date }}" \
+            --title "Release - ${{ steps.metadata.outputs.branch }} - ${{ steps.metadata.outputs.date }}" \
+            --notes "Automated resume build" \
+            "Devesh's Resume.pdf"
+          
+          # Prepare for GitHub Pages
+          mkdir -p out
+          cp resume.pdf out/Devesh_Resume.pdf
+          echo '<html><body><a href="Devesh_Resume.pdf">View Resume</a></body></html>' > out/index.html
+          
+          # Deploy to GitHub Pages
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add out/
+          git commit -m "Deploy resume to GitHub Pages" || exit 0
+          git push origin HEAD:gh-pages --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+
+      - name: Create branch-specific release (if not master)
+        if: github.ref != 'refs/heads/master'
+        run: |
+          # Rename PDF for release
+          cp resume.pdf "Devesh's Resume.pdf"
+          
+          # Create release with asset
+          gh release create "v${{ steps.metadata.outputs.date }}-${{ steps.metadata.outputs.branch }}" \
+            --title "Release - ${{ steps.metadata.outputs.branch }} - ${{ steps.metadata.outputs.date }}" \
+            --notes "Automated resume build from ${{ steps.metadata.outputs.branch }} branch" \
+            "Devesh's Resume.pdf"
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
         with:
           name: resume-pdf
           path: resume.pdf
-
-  create_release:
-    needs: compile_latex
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - name: Get current date
-        id: date
-        run: echo "date=$(date +'%Y-%m-%d-%H%M')" >> $GITHUB_OUTPUT
-
-      - name: Extract branch name
-        shell: bash
-        run: echo "branch=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
-        id: extract_branch
-
-      - name: Download PDF artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: resume-pdf
-
-      - name: Rename PDF
-        run: mv resume.pdf "Devesh's Resume.pdf"
-
-      - name: Create Release with Asset
-        uses: softprops/action-gh-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
-        with:
-          tag_name: v${{ steps.date.outputs.date }}-${{ steps.extract_branch.outputs.branch }}
-          name: Release - ${{ steps.extract_branch.outputs.branch }} - ${{ steps.date.outputs.date }}
-          files: "Devesh's Resume.pdf"
-          draft: false
-          prerelease: false
-          generate_release_notes: true
-
-
-  upload_asset:
-    needs: [compile_latex, create_release]
-    if: github.ref == 'refs/heads/master'
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - name: Download PDF artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: resume-pdf
-
-      - name: Release Asset
-        uses: softprops/action-gh-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
-        with:
-          tag_name: v${{ steps.date.outputs.date }}
-          files: resume.pdf
-          name: Devesh_Resume.pdf
-
-  deploy_to_github_pages:
-    needs: compile_latex
-    if: github.ref == 'refs/heads/master'
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - name: Download PDF artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: resume-pdf
-
-      - name: Create deployment directory
-        run: |
-          mkdir -p out
-          mv resume.pdf out/Devesh_Resume.pdf
-
-      - name: Create index.html
-        run: |
-          echo '<html><body><a href="Devesh_Resume.pdf">View Resume</a></body></html>' > out/index.html
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.PAT }}
-          publish_dir: ./out
-          publish_branch: gh-pages
