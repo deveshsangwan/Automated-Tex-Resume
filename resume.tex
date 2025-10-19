@@ -29,6 +29,9 @@
 \RequirePackage{tikz}
 \RequirePackage{xcolor}
 
+% Ensure spaces/ligatures are preserved when copying text from the PDF
+\XeTeXgenerateactualtext=1
+
 % Color definitions
 \definecolor{cvblue}{HTML}{0E5484}
 \definecolor{black}{HTML}{130810}
@@ -104,7 +107,7 @@
 %---------- PROFESSIONAL SUMMARY ----------
 \section{PROFESSIONAL SUMMARY}
 \vspace{-2pt}
-\small{Award-winning Software Engineer with 4+ years of experience specializing in high-performance backend systems. Drove a \textbf{75\% reduction in core processing latency} at Paisabazaar by re-architecting critical workflows. Proven expert in \textbf{Node.js, distributed systems, and scalable backend architecture}.}
+\small{Award-winning Software Engineer with 4+ years of experience designing scalable systems across backend and frontend. Architected a unified lending platform using \textbf{Strategy}, \textbf{Builder}, and \textbf{Factory} patterns, enabling modular partner flows and boosting performance by \textbf{75\%+}. Modernized the frontend stack to \textbf{TypeScript} with \textbf{TanStack Query}, \textbf{Zustand}, and \textbf{Webpack} optimization, achieving an \textbf{83\%} improvement in page performance.}
 
 
 %---------- EXPERIENCE ----------
@@ -114,14 +117,13 @@
       {Paisabazaar (PB Fintech)}{Gurugram, India}
       {Software Engineer}{Jan 2022 - Present}
       \resumeItemListStart
-        \resumeItem{Optimized the core loan processing workflow by re-engineering the Business Rule Engine (BRE) using the \textbf{Factory pattern}, slashing processing time by \textbf{75\%} (from 8s to 2s).}
-        \resumeItem{Architected a unified digital lending platform for \textbf{10+ partners} by leveraging the \textbf{Strategy and Builder patterns} to handle diverse workflows, boosting cross-selling by \textbf{35\%}.}
-        \resumeItem{Led zero-downtime migration of 4 critical microservices to \textbf{Node.js v18}, boosting runtime efficiency by \textbf{20\%} while mentoring 3 junior engineers on modern development practices.}
-        \resumeItem{Championed Test-Driven Development (TDD) adoption, raising team code coverage from 0\% to over \textbf{80\%} and conducting training sessions for junior developers.}
-        \resumeItem{Implemented a \textbf{Redis caching} strategy for application data and token management, reducing SQL database load by \textbf{45\%} and cutting overall API response times by \textbf{30\%}.}
-        \resumeItem{Developed a resilient CRON job system for automated loan disbursements, achieving \textbf{100\% same-day processing}.}
-        \resumeItem{Designed an \textbf{event-driven Journey-State platform} (TypeScript, Node EventEmitter, \textbf{Kysely/MySQL}, \textbf{Redis}); shipped \textbf{customer journey summary} API + cache and \textbf{Commbox} drop-off SMS; defined typed events and pluggable handlers enabling push notifications, CRM sync, lead disposal, and data-warehouse ingestion.}
-        \resumeItem{Built a partner/product-aware \textbf{status-resolution engine} (exact/stage/state fallbacks) with non-blocking emissions and a \textbf{24h cache TTL}; unified handler registration for main/sub/terminal/rejected transitions.}
+        \resumeItem{Architected a \textbf{unified digital lending platform} serving \textbf{10+ partners} using \textbf{Strategy} and \textbf{Builder} patterns — enabled plug-and-play partner onboarding and flow switching via configuration, improving reusability and boosting cross-sell by \textbf{35\%}.}
+        \resumeItem{Currently leading frontend migration of this platform from legacy React (JavaScript) to a \textbf{modern TypeScript-based stack} — integrated \textbf{TanStack Query}, \textbf{Zustand}, and \textbf{React Hook Form + Zod}, replacing custom API boilerplates and \textbf{localStorage} logic for cleaner, reactive state management; added \textbf{Lottie} for UI animations.}
+        \resumeItem{Optimized loan processing core (\textbf{BRE}) using the \textbf{Factory pattern}, cutting execution latency by \textbf{75\%} (\textbf{8s} $\rightarrow$ \textbf{2s}).}
+        \resumeItem{Enhanced landing page performance: reduced bundle size \textbf{10 MB} $\rightarrow$ \textbf{2 MB}, improved Lighthouse score \textbf{30} $\rightarrow$ \textbf{55} (\textbf{+83\%}), FCP \textbf{1.7 s} $\rightarrow$ \textbf{0.8 s} (\textbf{53\%} faster) via \textbf{Webpack} optimization and \textbf{lazy loading}.}
+        \resumeItem{Designed a \textbf{journey-state platform} (\textbf{TypeScript}, \textbf{Node EventEmitter}, \textbf{Kysely/MySQL}, \textbf{Redis}) powering event-driven customer summaries, CRM sync, and notification triggers.}
+        \resumeItem{Implemented \textbf{Redis-based caching} for tokens and app data, lowering SQL load by \textbf{45\%} and API latency by \textbf{30\%}.}
+        \resumeItem{Led \textbf{Node.js v18} migration of \textbf{4 microservices} with \textbf{zero downtime}; initiated \textbf{TDD} adoption (coverage \textbf{0} $\rightarrow$ \textbf{80\%}) and mentored 3 engineers on best practices.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -143,7 +145,7 @@
 \section{TECHNICAL SKILLS}
     \small{
     \textbf{Languages:} TypeScript, JavaScript, C, C++, Java \newline
-    \textbf{Frameworks \& Libraries:} Node.js, Express.js, React.js, Next.js, tRPC, Prisma, Cheerio, Tailwind CSS, Clerk, Framer Motion \newline
+    \textbf{Frameworks \& Libraries:} Node.js, Express.js, React.js, Next.js, TanStack Query, Zustand, React Hook Form, Prisma, Webpack \newline
     \textbf{Databases \& Caching:} MySQL, Cassandra, Redis, MongoDB \newline
     \textbf{DevOps \& Testing:} Docker, GitHub Actions, Vercel, Render, pnpm, Codecov, Mocha, Jest, Chai \newline
     \textbf{Architectures \& Methodologies:} Microservices, REST, tRPC, SSE, Monorepos, Agile, Test-Driven Development (TDD), Event-Driven Architecture, Design Patterns
