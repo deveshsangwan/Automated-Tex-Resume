@@ -21,16 +21,26 @@
 \setlength{\multicolsep}{-3.0pt}
 \setlength{\columnsep}{-1pt}
 \usepackage{fontspec}
+\usepackage{iftex}
+\usepackage{accsupp}
 \setmainfont{Lato}[
-  UprightFont = *-Light,
-  BoldFont = *-Regular
+  Path = fonts/lato/,
+  Extension = .ttf,
+  UprightFont = *-Lig,
+  ItalicFont = *-LigIta,
+  BoldFont = *-Bol,
+  BoldItalicFont = *-BolIta,
+  Ligatures = TeX,
+  Renderer = HarfBuzz
 ]
 
 \RequirePackage{tikz}
 \RequirePackage{xcolor}
 
-% Ensure spaces/ligatures are preserved when copying text from the PDF
-\XeTeXgenerateactualtext=1
+% Ensure spaces/ligatures are preserved when copying text from the PDF (XeTeX only)
+\ifXeTeX
+  \XeTeXgenerateactualtext=1
+\fi
 
 % Color definitions
 \definecolor{cvblue}{HTML}{0E5484}
@@ -61,7 +71,7 @@
 
 % Section formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large\bfseries
+  \vspace{-4pt}\raggedright\large\bfseries
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 % Custom commands
@@ -87,6 +97,9 @@
 \renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
+% Accessibility helper: hide icon glyphs from the copy/paste layer
+\newcommand{\hideicon}[1]{\BeginAccSupp{method=pdfstringdef,ActualText= }#1\EndAccSupp{}}
+
 %================================================================================
 % START OF RESUME DOCUMENT
 %================================================================================
@@ -96,11 +109,11 @@
 \begin{center}
     {\Huge \scshape Devesh Sangwan} \\ \vspace{1pt}
     Gurugram, India \\
-    \small \href{tel:+91-7042125808}{\raisebox{-0.1\height}\faPhone~+91-7042125808} ~
-    \href{mailto:dev.sangwan2001@gmail.com}{\raisebox{-0.2\height}\faEnvelope~dev.sangwan2001@gmail.com} ~
-    \href{https://deveshsangwan.com}{\raisebox{-0.1\height}{\faGlobe}~Portfolio} ~
-    \href{https://www.linkedin.com/in/deveshsangwan/}{\raisebox{-0.2\height}\faLinkedin~LinkedIn} ~
-    \href{https://github.com/deveshsangwan}{\raisebox{-0.2\height}\faGithub~GitHub}
+    \small \href{tel:+91-7042125808}{\raisebox{-0.1\height}{\hideicon{\faPhone}}~+91-7042125808} ~
+    \href{mailto:dev.sangwan2001@gmail.com}{\raisebox{-0.2\height}{\hideicon{\faEnvelope}}~dev.sangwan2001@gmail.com} ~
+    \href{https://deveshsangwan.com}{\raisebox{-0.1\height}{\hideicon{\faGlobe}}~Portfolio} ~
+    \href{https://www.linkedin.com/in/deveshsangwan/}{\raisebox{-0.2\height}{\hideicon{\faLinkedin}}~LinkedIn} ~
+    \href{https://github.com/deveshsangwan}{\raisebox{-0.2\height}{\hideicon{\faGithub}}~GitHub}
 \end{center}
 
 
@@ -131,7 +144,7 @@
 \section{PROJECTS}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {\href{https://cricscore.deveshsangwan.com/}{Cricket Score Monorepo: Real-time Scores \raisebox{-0.1\height}{\faLink}}}{Next.js, tRPC, Prisma, pnpm, Docker}{}{}
+      {\href{https://cricscore.deveshsangwan.com/}{Cricket Score Monorepo: Real-time Scores \raisebox{-0.1\height}{\hideicon{\faLink}}}}{Next.js, tRPC, Prisma, pnpm, Docker}{}{}
       \vspace{-10pt}
     \resumeItemListStart
         \resumeItem{Built a \textbf{pnpm monorepo} with a \textbf{Next.js} frontend and a TypeScript backend exposing a \textbf{tRPC} API over Express; shared types for end-to-end type safety.}

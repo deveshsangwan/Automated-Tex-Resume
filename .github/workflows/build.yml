@@ -20,11 +20,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Compile LaTeX document
+      - name: Compile LaTeX document (LuaLaTeX)
         uses: xu-cheng/latex-action@v3
         with:
           root_file: resume.tex
-          latexmk_use_xelatex: true
+          latexmk_use_lualatex: true
 
       - name: Check for PDF
         run: |
