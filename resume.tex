@@ -130,13 +130,13 @@
       {Paisabazaar (PB Fintech)}{Gurugram, India}
       {Software Engineer}{Jan 2022 - Present}
       \resumeItemListStart
-        \resumeItem{Architected a \textbf{unified digital lending platform} serving \textbf{10+ partners} using \textbf{Strategy} and \textbf{Builder} patterns — enabled plug-and-play partner onboarding and flow switching via configuration, improving reusability and boosting cross-sell by \textbf{35\%}.}
-        \resumeItem{Led the frontend migration of this platform from legacy React (JavaScript) to a \textbf{modern TypeScript-based stack} — integrated \textbf{TanStack Query}, \textbf{Zustand}, and \textbf{React Hook Form + Zod}, replacing custom API boilerplates and \textbf{localStorage} logic for cleaner, reactive state management; added \textbf{Lottie} for UI animations.}
-        \resumeItem{Optimized loan processing core (\textbf{BRE}) using the \textbf{Factory pattern}, cutting execution latency by \textbf{75\%} (\textbf{8s} $\rightarrow$ \textbf{2s}).}
-        \resumeItem{Enhanced landing page performance: reduced bundle size \textbf{10 MB} $\rightarrow$ \textbf{2 MB}, improved Lighthouse score \textbf{30} $\rightarrow$ \textbf{55} (\textbf{+83\%}), FCP \textbf{1.7 s} $\rightarrow$ \textbf{0.8 s} (\textbf{53\%} faster) via \textbf{Webpack} optimization and \textbf{lazy loading}.}
+        \resumeItem{Architected a \textbf{unified digital lending platform} serving \textbf{10+ partners} using \textbf{Strategy} and \textbf{Builder} patterns; enabled plug-and-play partner onboarding and flow switching via configuration, improving reusability and boosting cross-sell by \textbf{35\%}.}
+        \resumeItem{Led frontend migration from legacy React/JavaScript to a \textbf{TypeScript} stack with \textbf{TanStack Query}, \textbf{Zustand}, and \textbf{React Hook Form + Zod}; removed custom API boilerplate and brittle \textbf{localStorage} state.}
+        \resumeItem{Optimized loan processing core (\textbf{BRE}) using the \textbf{Factory pattern}, cutting execution latency by \textbf{75\%} (\textbf{8s to 2s}).}
+        \resumeItem{Enhanced landing page performance: reduced bundle size \textbf{10 MB to 2 MB}, improved Lighthouse score \textbf{30 to 55} (\textbf{+83\%}), FCP \textbf{1.7 s to 0.8 s} (\textbf{53\%} faster) via \textbf{Webpack} optimization and \textbf{lazy loading}.}
         \resumeItem{Designed a \textbf{journey-state platform} (\textbf{TypeScript}, \textbf{Node EventEmitter}, \textbf{Kysely/MySQL}, \textbf{Redis}) powering event-driven customer summaries, CRM sync, and notification triggers.}
-        \resumeItem{Implemented \textbf{Redis-based caching} for tokens and app data, lowering SQL load by \textbf{45\%} and API latency by \textbf{30\%}.}
-        \resumeItem{Led \textbf{Node.js v18} migration of \textbf{4 microservices} with \textbf{zero downtime}; initiated \textbf{TDD} adoption (coverage \textbf{0} $\rightarrow$ \textbf{80\%}) and mentored 3 engineers on best practices.}
+        \resumeItem{Implemented \textbf{Redis-based caching} for tokens/app data, lowering SQL load by \textbf{45\%} and API latency by \textbf{30\%}; led \textbf{Node.js v18} migration of \textbf{4 microservices} with \textbf{zero downtime}.}
+        \resumeItem{Initiated \textbf{TDD} adoption for critical services (coverage \textbf{0 to 80\%}) and mentored \textbf{3 engineers} on TypeScript, testing, and maintainable service patterns.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -144,13 +144,27 @@
 \section{PROJECTS}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {\href{https://cricscore.deveshsangwan.com/}{Cricket Score Monorepo: Real-time Scores \raisebox{-0.1\height}{\hideicon{\faLink}}}}{Next.js, tRPC, Prisma, pnpm, Docker}{}{}
+      {\href{https://github.com/deveshsangwan/investment-sync}{Investment Sync: Cross-platform Portfolio Tracker \raisebox{-0.1\height}{\hideicon{\faLink}}}}{Next.js, Expo, tRPC, Drizzle, Supabase}{}{}
       \vspace{-10pt}
     \resumeItemListStart
-        \resumeItem{Built a \textbf{pnpm monorepo} with a \textbf{Next.js} frontend and a TypeScript backend exposing a \textbf{tRPC} API over Express; shared types for end-to-end type safety.}
-        \resumeItem{Delivered real-time match stats via \textbf{SSE} subscriptions (tRPC \texttt{subscribeMatchStatsById}); scraped live data with \textbf{Cheerio} and persisted via \textbf{Prisma} + \textbf{MongoDB}.}
-        \resumeItem{Secured the stack with \textbf{Clerk} authentication; containerized with \textbf{Docker}; CI with \textbf{GitHub Actions}; coverage tracked via \textbf{Codecov} (\textbf{90.1\% functions}, \textbf{93.82\% lines}).}
-        \resumeItem{Open-sourced (\href{https://github.com/deveshsangwan/cricketScoreApi}{GitHub}); deployed frontend to \textbf{Vercel} and backend to \textbf{Render}.}
+        \resumeItem{Built a \textbf{pnpm/Turborepo} monorepo for Indian and US investments with a \textbf{Next.js App Router} web app, read-only \textbf{Expo} app, shared \textbf{tRPC} API, \textbf{Clerk} auth, and React Query data flows.}
+        \resumeItem{Created upload-first importers for \textbf{Tickertape}, \textbf{Vested/DriveWealth}, and spreadsheets; normalized holdings into \textbf{Supabase Postgres} via \textbf{Drizzle}, retained source files privately, and added allocation/\textbf{XIRR} analytics.}
+        \resumeItem{Added typed validation with \textbf{Zod} plus production scripts for database migrations, fake local seed data, linting, tests, and type checks across web, mobile, API, database, importers, and analytics packages.}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {\href{https://github.com/deveshsangwan/cricketScoreApi}{Cricket Score Monorepo: Real-time Match System \raisebox{-0.1\height}{\hideicon{\faLink}}}}{Next.js, Express, tRPC, Prisma, MongoDB}{}{}
+      \vspace{-10pt}
+    \resumeItemListStart
+        \resumeItem{Built a real-time cricket score product with shared TypeScript types, a \textbf{Next.js} frontend, and an \textbf{Express/tRPC} backend; delivered live match updates through \textbf{SSE} subscriptions.}
+        \resumeItem{Scraped live data with \textbf{Cheerio}, persisted match data through \textbf{Prisma + MongoDB}, secured routes with \textbf{Clerk}, containerized with \textbf{Docker}, and tracked Codecov coverage (\textbf{90.1\% functions}, \textbf{93.82\% lines}).}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {Shipped Developer Tools}{TypeScript, Chrome Extension, npm}{}{}
+      \vspace{-10pt}
+    \resumeItemListStart
+        \resumeItem{\textbf{\href{https://github.com/deveshsangwan/ArcCopy}{QuickClip URL \raisebox{-0.1\height}{\hideicon{\faLink}}}}: shipped Chrome extension for copying current-tab URLs, including restricted pages, with \textbf{298 weekly users}; also built privacy-first npm tools \textbf{\href{https://github.com/deveshsangwan/portfolio-presence}{portfolio-presence}} and \textbf{\href{https://github.com/deveshsangwan/prompt-crimes}{prompt-crimes}}.}
     \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -158,10 +172,10 @@
 \section{TECHNICAL SKILLS}
     \small{
     \textbf{Languages:} TypeScript, JavaScript, C, C++, Java \newline
-    \textbf{Frameworks \& Libraries:} Node.js, Express.js, React.js, Next.js, TanStack Query, Zustand, React Hook Form, Prisma, Webpack \newline
-    \textbf{Databases \& Caching:} MySQL, Cassandra, Redis, MongoDB \newline
-    \textbf{DevOps \& Testing:} Docker, GitHub Actions, Vercel, Render, pnpm, Codecov, Mocha, Jest, Chai \newline
-    \textbf{Architectures \& Methodologies:} Microservices, REST, tRPC, SSE, Monorepos, Agile, Test-Driven Development (TDD), Event-Driven Architecture, Design Patterns
+    \textbf{Frameworks \& Libraries:} Node.js, Express.js, React.js, Next.js, Expo, TanStack Query, Zustand, React Hook Form, Zod, Prisma, Drizzle, Webpack \newline
+    \textbf{Databases \& Caching:} MySQL, Cassandra, Redis, PostgreSQL, Supabase, MongoDB \newline
+    \textbf{DevOps \& Testing:} Docker, GitHub Actions, Vercel, Render, pnpm, Turborepo, Codecov, Vitest, Jest, Mocha, Chai \newline
+    \textbf{Architectures \& Methodologies:} Microservices, REST, tRPC, SSE, Monorepos, Event-Driven Architecture, TDD, Design Patterns, Agile
     }
 
 %---------- ACHIEVEMENTS ----------
