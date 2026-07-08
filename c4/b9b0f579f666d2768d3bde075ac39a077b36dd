@@ -1,0 +1,29 @@
+resume.tex
+  s_e34769dd9c5a2c::t_9476f6c341cb5c 138,150-151,160
+  s_e34769dd9c5a2c::t_21d7cbaf5d104e 147,155-157,163-167
+  h_9c147e6399b95b 176
+  s_e34769dd9c5a2c::t_79c2f4c45f2d8c 152
+  s_e34769dd9c5a2c::t_52a2b8c4c85a31 133,135-136,139
+  s_e34769dd9c5a2c::t_253ad3aa419f37 134,153-154,158-159,161-162,175,177-178,206
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "c4b9b0f579f666d2768d3bde075ac39a077b36dd",
+  "prompts": {},
+  "humans": {
+    "h_9c147e6399b95b": {
+      "author": "deveshsangwan <dev.sangwan2001@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_e34769dd9c5a2c": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f0d7e-61bc-71e3-81dd-0e3e1fe7cf3e",
+        "model": "gpt-5.5"
+      },
+      "human_author": "deveshsangwan <dev.sangwan2001@gmail.com>"
+    }
+  }
+}
