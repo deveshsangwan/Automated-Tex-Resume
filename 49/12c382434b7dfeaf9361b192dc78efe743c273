@@ -1,0 +1,14 @@
+resume.tex
+  h_9c147e6399b95b 139
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "4912c382434b7dfeaf9361b192dc78efe743c273",
+  "prompts": {},
+  "humans": {
+    "h_9c147e6399b95b": {
+      "author": "deveshsangwan <dev.sangwan2001@gmail.com>"
+    }
+  }
+}
