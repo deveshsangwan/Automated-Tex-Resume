@@ -120,7 +120,7 @@
 %---------- PROFESSIONAL SUMMARY ----------
 \section{PROFESSIONAL SUMMARY}
 \vspace{-2pt}
-\small{Award-winning Software Engineer with 4+ years of experience designing scalable systems across backend and frontend. Architected a unified lending platform using \textbf{Strategy}, \textbf{Builder}, and \textbf{Factory} patterns, enabling modular partner flows and boosting performance by \textbf{75\%+}. Modernized the frontend stack to \textbf{TypeScript} with \textbf{TanStack Query}, \textbf{Zustand}, and \textbf{Webpack} optimization, achieving an \textbf{83\%} improvement in page performance.}
+\small{Software Engineer with 4+ years designing lending platforms, event-driven systems, and reactive synchronization engines. Experienced in system architecture, data consistency, performance optimization, and end-to-end product delivery.}
 
 
 %---------- EXPERIENCE ----------
@@ -130,13 +130,13 @@
       {Paisabazaar (PB Fintech)}{Gurugram, India}
       {Software Engineer}{Jan 2022 - Present}
       \resumeItemListStart
-        \resumeItem{Architected a \textbf{unified digital lending platform} serving \textbf{10+ partners} using \textbf{Strategy} and \textbf{Builder} patterns; enabled plug-and-play partner onboarding and flow switching via configuration, improving reusability and boosting cross-sell by \textbf{35\%}.}
-        \resumeItem{Led frontend migration from legacy React/JavaScript to a \textbf{TypeScript} stack with \textbf{TanStack Query}, \textbf{Zustand}, and \textbf{React Hook Form + Zod}; removed custom API boilerplate and brittle \textbf{localStorage} state.}
-        \resumeItem{Optimized loan processing core (\textbf{BRE}) using the \textbf{Factory pattern}, cutting execution latency by \textbf{75\%} (\textbf{8s to 2s}).}
-        \resumeItem{Enhanced landing page performance: reduced bundle size \textbf{10 MB to 2 MB}, improved Lighthouse score \textbf{30 to 55} (\textbf{+83\%}), FCP \textbf{1.7 s to 0.8 s} (\textbf{53\%} faster) via \textbf{Webpack} optimization and \textbf{lazy loading}.}
-        \resumeItem{Designed a \textbf{journey-state platform} (\textbf{TypeScript}, \textbf{Node EventEmitter}, \textbf{Kysely/MySQL}, \textbf{Redis}) powering event-driven customer summaries, CRM sync, and notification triggers.}
-        \resumeItem{Implemented \textbf{Redis caching}, lowering SQL load by \textbf{45\%} and API latency by \textbf{30\%}; led \textbf{Node.js v18} migration of \textbf{4 microservices} with \textbf{zero downtime}.}
-        \resumeItem{Initiated \textbf{TDD} adoption for critical services raising coverage from \textbf{0 to 80\%}, and mentored \textbf{3 engineers}.}
+        \resumeItem{Co-designed and delivered an \textbf{end-to-end lending-platform rewrite} across \textbf{Node.js/TypeScript services} and a \textbf{SvelteKit frontend}, decoupling initial form display from asynchronous enrichment; observed \textbf{\textasciitilde{}0.7s} to first visible form in production tests versus a historical \textbf{\textasciitilde{}9s} baseline.}
+        \resumeItem{Built a \textbf{reactive synchronization engine} coordinating asynchronous providers and \textbf{edit-preserving client reconciliation} with \textbf{Redis Pub/Sub}, \textbf{SSE/polling}, and \textbf{optimistic concurrency control}; served snapshots without database reads on cache hits, with durable-storage fallback and asynchronous cache restoration.}
+        \resumeItem{Optimized core loan processing (\textbf{BRE}), cutting execution latency by \textbf{75\%} (\textbf{8s to 2s}).}
+        \resumeItem{Architected \textbf{configuration-driven partner orchestration} for a unified lending platform serving \textbf{10+ partners}; enabled plug-and-play onboarding and journey routing, boosting cross-sell by \textbf{35\%}.}
+        \resumeItem{Designed an \textbf{event-driven journey-state platform} coordinating customer status changes, CRM synchronization, and notifications via \textbf{TypeScript/Node EventEmitter}, \textbf{Kysely/MySQL} persistence, and \textbf{Redis-backed status projections}.}
+        \resumeItem{Led migration of \textbf{4 Node.js microservices} with \textbf{zero downtime}.}
+        \resumeItem{Introduced \textbf{TDD} for critical services, raising test coverage from \textbf{0 to 80\%}, and mentored \textbf{3 engineers}.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -144,19 +144,19 @@
 \section{PROJECTS}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {\href{https://github.com/deveshsangwan/investment-sync}{Investment Sync: Cross-platform Portfolio Tracker \raisebox{-0.1\height}{\hideicon{\faLink}}}}{Next.js, Expo, tRPC, Drizzle, Supabase}{}{}
+      {\href{https://github.com/deveshsangwan/investment-sync}{Investment Sync: Investment Management Platform \raisebox{-0.1\height}{\hideicon{\faLink}}}}{Next.js, Convex, Clerk, TypeScript}{}{}
       \vspace{-10pt}
     \resumeItemListStart
-        \resumeItem{Built a \textbf{pnpm/Turborepo} monorepo for Indian and US investments using \textbf{Next.js}, \textbf{Expo}, \textbf{tRPC}, \textbf{Clerk} auth, and React Query.}
-        \resumeItem{Created upload-first importers for \textbf{Tickertape}, \textbf{Vested/DriveWealth}, and spreadsheets; normalized holdings into \textbf{Supabase Postgres} via \textbf{Drizzle}, retained source files privately, and added allocation/\textbf{XIRR} analytics.}
+        \resumeItem{Rearchitected an \textbf{investment-management platform on Convex} for Indian and US portfolios, with reactive \textbf{Next.js} views, \textbf{household-scoped authorization}, and allocation/\textbf{XIRR} analytics.}
+        \resumeItem{Designed \textbf{asynchronous statement ingestion} and \textbf{versioned portfolio publication} with duplicate detection and \textbf{decimal-safe financial facts}; atomically activated completed portfolio versions.}
     \resumeItemListEnd
 
     \resumeSubheading
-      {\href{https://github.com/deveshsangwan/cricketScoreApi}{Cricket Score Monorepo: Real-time Match System \raisebox{-0.1\height}{\hideicon{\faLink}}}}{Next.js, Express, tRPC, Prisma, MongoDB}{}{}
+      {\href{https://github.com/deveshsangwan/cricketScoreApi}{Cricket Score Monorepo: Real-time Match System \raisebox{-0.1\height}{\hideicon{\faLink}}}}{Next.js, tRPC, Prisma, MongoDB}{}{}
       \vspace{-10pt}
     \resumeItemListStart
-        \resumeItem{Built a real-time cricket score product with shared TypeScript types, a \textbf{Next.js} frontend, and an \textbf{Express/tRPC} backend; delivered live match updates through \textbf{SSE} subscriptions.}
-        \resumeItem{Scraped live data with \textbf{Cheerio}, persisted match data through \textbf{Prisma + MongoDB}, secured routes with \textbf{Clerk}, containerized with \textbf{Docker}, and tracked Codecov coverage (\textbf{90.1\% functions}, \textbf{93.82\% lines}).}
+        \resumeItem{Built a \textbf{live-score ingestion and streaming backend} with \textbf{tRPC} and \textbf{MongoDB}, delivering \textbf{SSE} updates to a typed \textbf{Next.js} client.}
+        \resumeItem{Scraped match data with \textbf{Cheerio}, persisted it through \textbf{Prisma}, secured routes with \textbf{Clerk}, and containerized with \textbf{Docker}; tracked \textbf{93.82\% line coverage} in Codecov.}
     \resumeItemListEnd
 
     \resumeSubheading
@@ -170,11 +170,11 @@
 %---------- TECHNICAL SKILLS ----------
 \section{TECHNICAL SKILLS}
     \small{
-    \textbf{Languages:} TypeScript, JavaScript, C, C++, Java \newline
-    \textbf{Frameworks \& Libraries:} Node.js, Express.js, React, Next.js, TanStack Query, Zustand, React Hook Form, Zod, Prisma, Drizzle \newline
-    \textbf{Databases \& Caching:} MySQL, Cassandra, Redis, PostgreSQL, Supabase, MongoDB \newline
-    \textbf{DevOps \& Testing:} Docker, GitHub Actions, Vercel, Render, pnpm, Turborepo, Codecov, Vitest, Jest, Mocha, Chai \newline
-    \textbf{Architectures \& Methodologies:} Microservices, REST, tRPC, SSE, Monorepos, Event-Driven Architecture, TDD, Design Patterns
+    \textbf{Languages:} TypeScript, JavaScript, SQL, Lua \newline
+    \textbf{Frameworks \& Libraries:} Node.js, Express.js, Kysely, Zod, Prisma, Drizzle, Svelte, SvelteKit, React, Next.js \newline
+    \textbf{Databases \& Messaging:} Convex, Redis, Redis Pub/Sub, MySQL, Cassandra, PostgreSQL, MongoDB, SSE \newline
+    \textbf{DevOps \& Testing:} Docker, GitHub Actions, Vitest, Jest, Mocha, Chai, pnpm, Turborepo \newline
+    \textbf{Architecture:} Microservices, REST, tRPC, event-driven systems, asynchronous processing, state machines, TDD
     }
 
 %---------- ACHIEVEMENTS ----------
@@ -182,10 +182,7 @@
   \resumeSubHeadingListStart
   \resumeSubheading
       {Paisabazaar Stellar Award - Supernova Category}{2025}{}{}
-      \vspace{-15pt}
-      \resumeItemListStart
-    \resumeItem{Awarded for exceptional engineering performance, leadership, and high-impact contributions to the core lending platform.}
-\resumeItemListEnd
+      \vspace{-11pt}
     \resumeSubheading
       {Smart India Hackathon Winner}{2020}{}{}
       \vspace{-15pt}
