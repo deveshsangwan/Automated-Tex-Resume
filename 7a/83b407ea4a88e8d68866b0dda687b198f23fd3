@@ -1,0 +1,25 @@
+.github/workflows/build.yml
+  s_fed068e5ca4a22::t_7f4271ef189643 57
+resume.tex
+  s_fed068e5ca4a22::t_18325c82c87eb7 123,135-136,139,155,158-159
+  s_fed068e5ca4a22::t_419d87ba802948 133,137
+  s_fed068e5ca4a22::t_709ca96ec1cd8b 134,138,147,150-151,175
+  s_fed068e5ca4a22::t_d9d1b9c4ebf5d0 173-174,176-177
+  s_fed068e5ca4a22::t_79673edc78cc16 185
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7a83b407ea4a88e8d68866b0dda687b198f23fd3",
+  "prompts": {},
+  "sessions": {
+    "s_fed068e5ca4a22": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1350b-08e3-76d1-bc7f-4a303a25d784",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Devesh Sangwan <deveshsangwan@PAISAMAC156.local>"
+    }
+  }
+}
