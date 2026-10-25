@@ -1,0 +1,19 @@
+resume.tex
+  s_fed068e5ca4a22::t_2411d6b5fa540e 133-136,138
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "89246b4034a4169e4c13c51074e6527f2a89d800",
+  "prompts": {},
+  "sessions": {
+    "s_fed068e5ca4a22": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1350b-08e3-76d1-bc7f-4a303a25d784",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Devesh Sangwan <deveshsangwan@PAISAMAC156.local>"
+    }
+  }
+}
