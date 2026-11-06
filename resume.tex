@@ -110,7 +110,7 @@
     {\Huge \scshape Devesh Sangwan} \\ \vspace{1pt}
     Gurugram, India \\
     \small \href{tel:+91-7042125808}{\raisebox{-0.1\height}{\hideicon{\faPhone}}~+91-7042125808} ~
-    \href{mailto:dev.sangwan2001@gmail.com}{\raisebox{-0.2\height}{\hideicon{\faEnvelope}}~dev.sangwan2001@gmail.com} ~
+    \href{mailto:hello@deveshsangwan.com}{\raisebox{-0.2\height}{\hideicon{\faEnvelope}}~hello@deveshsangwan.com} ~
     \href{https://deveshsangwan.com}{\raisebox{-0.1\height}{\hideicon{\faGlobe}}~Portfolio} ~
     \href{https://www.linkedin.com/in/deveshsangwan/}{\raisebox{-0.2\height}{\hideicon{\faLinkedin}}~LinkedIn} ~
     \href{https://github.com/deveshsangwan}{\raisebox{-0.2\height}{\hideicon{\faGithub}}~GitHub}
@@ -130,13 +130,13 @@
       {Paisabazaar (PB Fintech)}{Gurugram, India}
       {Software Engineer}{Jan 2022 - Present}
       \resumeItemListStart
-        \resumeItem{Co-designed and delivered an \textbf{end-to-end architectural rewrite} of the \textbf{MyPaisa lending experience} across backend services and a \textbf{SvelteKit frontend}, decoupling initial form rendering from asynchronous enrichment; observed \textbf{\textasciitilde{}0.7s} to first visible form in production tests versus a historically reported \textbf{\textasciitilde{}9s} load time.}
-        \resumeItem{Built a \textbf{reactive synchronization engine} to reconcile version conflicts and preserve client edits using \textbf{optimistic concurrency control}, \textbf{Redis Pub/Sub} and \textbf{SSE/polling}; observed a \textbf{98.7\% snapshot-cache hit rate} and avoided an \textbf{estimated 80\% of form-state SQL reads} compared with uncached retrieval.}
-        \resumeItem{Optimized the lending \textbf{business rules engine (BRE)}, cutting execution latency by \textbf{75\%} (\textbf{8s to 2s}).}
-        \resumeItem{Architected \textbf{configuration-driven partner orchestration} for a unified lending platform serving \textbf{10+ partners}; enabled plug-and-play onboarding and journey routing and contributed to a \textbf{35\% increase in cross-sell}.}
-        \resumeItem{Designed an \textbf{event-driven journey-state platform} coordinating customer status changes, CRM synchronization, and notifications via \textbf{TypeScript/Node EventEmitter}, \textbf{Kysely/MySQL} persistence, and \textbf{Redis-backed status projections}.}
-        \resumeItem{Led the migration of \textbf{4 microservices} to \textbf{Node.js v18} with \textbf{zero downtime}.}
-        \resumeItem{Introduced \textbf{TDD} for critical services, raising test coverage from \textbf{0 to 80\%}, and mentored \textbf{3 engineers}.}
+        \resumeItem{Co-designed and delivered an end-to-end architectural rewrite of the MyPaisa lending experience across backend services and a SvelteKit frontend, decoupling initial form rendering from asynchronous enrichment; observed \textbf{\textasciitilde{}0.7s} to first visible form in production tests versus a historically reported \textbf{\textasciitilde{}9s} load time.}
+        \resumeItem{Preserved client edits and resolved version conflicts through optimistic concurrency control, Redis Pub/Sub and SSE/polling. The broader cache-first rewrite had an observed \textbf{98.7\% snapshot-cache hit rate} and separately avoided an \textbf{estimated 80\% of form-state SQL reads} versus uncached retrieval.}
+        \resumeItem{Optimized the lending business rules engine (BRE), cutting execution latency by \textbf{75\%} (\textbf{8s to 2s}).}
+        \resumeItem{Architected configuration-driven partner orchestration for a unified lending platform serving \textbf{10+ partners}; enabled plug-and-play onboarding and journey routing and contributed to a \textbf{35\% increase in cross-sell}.}
+        \resumeItem{Designed an event-driven journey-state platform coordinating customer status changes, CRM synchronization, and notifications via TypeScript/Node EventEmitter, Kysely/MySQL persistence, and Redis-backed status projections.}
+        \resumeItem{Led the migration of \textbf{4 microservices} to Node.js v18 with \textbf{zero downtime}.}
+        \resumeItem{Introduced TDD for critical services, raising test coverage from \textbf{0 to 80\%}, and mentored \textbf{3 engineers}.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -147,23 +147,25 @@
       {\href{https://github.com/deveshsangwan/investment-sync}{Investment Sync: Investment Management Platform \raisebox{-0.1\height}{\hideicon{\faLink}}}}{Next.js, Convex, Clerk, TypeScript}{}{}
       \vspace{-10pt}
     \resumeItemListStart
-        \resumeItem{Rearchitected an \textbf{investment-management platform on Convex} for Indian and US portfolios, with reactive \textbf{Next.js} views, \textbf{household-scoped authorization}, and allocation/\textbf{XIRR} analytics.}
-        \resumeItem{Designed \textbf{asynchronous statement ingestion} and \textbf{versioned portfolio publication} with duplicate detection and \textbf{decimal-safe financial facts}; atomically activated completed portfolio versions.}
+        \resumeItem{Rearchitected an investment-management platform on Convex for Indian and US portfolios, with reactive Next.js views, household-scoped authorization, and allocation/XIRR analytics.}
+        \resumeItem{Designed asynchronous statement ingestion and versioned portfolio publication with duplicate detection and decimal-safe financial facts; atomically activated completed portfolio versions.}
     \resumeItemListEnd
 
+    \vspace{3pt}
     \resumeSubheading
       {\href{https://github.com/deveshsangwan/cricketScoreApi}{Cricket Score Monorepo: Real-time Match System \raisebox{-0.1\height}{\hideicon{\faLink}}}}{Next.js, tRPC, Prisma, MongoDB}{}{}
       \vspace{-10pt}
     \resumeItemListStart
-        \resumeItem{Built a \textbf{live-score ingestion and streaming backend} with \textbf{tRPC} and \textbf{MongoDB}, delivering \textbf{SSE} updates to a typed \textbf{Next.js} client.}
-        \resumeItem{Scraped match data with \textbf{Cheerio}, persisted it through \textbf{Prisma}, secured routes with \textbf{Clerk}, and containerized with \textbf{Docker}; tracked \textbf{93.82\% line coverage} in Codecov.}
+        \resumeItem{Built a live-score ingestion and streaming backend with tRPC and MongoDB, delivering SSE updates to a typed Next.js client.}
+        \resumeItem{Scraped match data with Cheerio, persisted it through Prisma, secured routes with Clerk, and containerized with Docker; tracked \textbf{93.82\% line coverage} in Codecov.}
     \resumeItemListEnd
 
+    \vspace{3pt}
     \resumeSubheading
       {Shipped Developer Tools}{TypeScript, Chrome Extension, npm}{}{}
       \vspace{-10pt}
     \resumeItemListStart
-        \resumeItem{\textbf{\href{https://github.com/deveshsangwan/ArcCopy}{QuickClip URL \raisebox{-0.1\height}{\hideicon{\faLink}}}}: shipped Chrome extension for copying current-tab URLs, including restricted pages, with \textbf{300+ weekly users}; also built privacy-first npm tools \textbf{\href{https://github.com/deveshsangwan/portfolio-presence}{portfolio-presence}} and \textbf{\href{https://github.com/deveshsangwan/prompt-crimes}{prompt-crimes}}.}
+        \resumeItem{\textbf{\href{https://github.com/deveshsangwan/ArcCopy}{QuickClip URL \raisebox{-0.1\height}{\hideicon{\faLink}}}}: shipped Chrome extension for copying current-tab URLs, including restricted pages, with \textbf{300+ weekly users}; also built privacy-first npm tools \href{https://github.com/deveshsangwan/portfolio-presence}{portfolio-presence} and \href{https://github.com/deveshsangwan/prompt-crimes}{prompt-crimes}.}
     \resumeItemListEnd
   \resumeSubHeadingListEnd
 
